@@ -1,5 +1,3 @@
-
-<!-- hello -->
 <template>
   <div id="app">
   <header-slot>
@@ -13,6 +11,9 @@
         </b-nav-item>
         <b-nav-item>
           <nuxt-link class="nav-link" to="/erunners">Elite Runners</nuxt-link>
+        </b-nav-item>
+        <b-nav-item>
+          <nuxt-link class="nav-link" to="/gettingstarted">Getting Started</nuxt-link>
         </b-nav-item>
         <b-nav-item>
           <nuxt-link class="nav-link" to="/training">Training</nuxt-link>
