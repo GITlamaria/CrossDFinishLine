@@ -86,8 +86,8 @@ export default {
 
             titleFriend: "Bond With a Friend",
             altFriend: "2 people running",
-            // imageFriend:  require('../assets/images/run-friend.jpeg'),
-            imageFriend:  ('../assets/images/run-friend.jpeg'),
+            imageFriend:  require('../assets/images/run-friend.jpeg'),
+            // imageFriend:  ('../assets/images/run-friend.jpeg'),
             
         
             titleSolo: "Let your mind wonder...",
