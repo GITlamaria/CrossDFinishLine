@@ -1,54 +1,72 @@
 <template>
     <b-container fluid class="nba-container">
 
-            <h1>{{title}}</h1>
-
+            <h1 @mouseover="hovered = true" 
+            @mouseleave="hovered = false" :class="{'changeColor':hovered}">{{title}}</h1>
 
         <b-row>
+            <b-col class="headings">Team ID</b-col>
             <b-col class="headings">Team Name</b-col>
             <b-col class="headings">Abbreviation</b-col>
             <b-col class="headings">City</b-col>
             <b-col class="headings">Division</b-col>
+            <b-col class="headings">Conference</b-col>
         </b-row>
-        <b-row v-for="team in teams" :key="team.id" >
+
+        <!-- add a border when mouse is clicked -->
+        <!-- iterate through the teams array and add data to columns based on binded property -->
+        <b-row @click="toggleClass()" :class="{'addBorder' :bordered}" 
+          v-for="team in teams" :key="team.id" >
+            <b-col>{{team.id}}</b-col>
             <b-col>{{team.full_name}}</b-col>
             <b-col>{{team.abbreviation}}</b-col>
             <b-col>{{team.city}}</b-col>
             <b-col>{{team.division}}</b-col>
-        </b-row>
-        
+            <b-col>{{team.conference}}</b-col>
+        </b-row>        
     </b-container>
 </template>
 
 <script>
 
 import axios from 'axios'
-export default {
-    name: 'Team',
 
+
+export default {
+    
     data() {
         return {
             teams: [],
-            title: 'NBA Teams'
-        }
+            title: 'NBA Teams',
+
+            hovered: false,
+            bordered: false,
+        } 
     },
+    methods: {
+      toggleClass: function() {
+        this.bordered=!this.bordered;
+      }
+    },
+     
+    
     async created() {
     const config = {
-    // params: {page: '0', per_page: '25'},
+ 
       headers: {
         Accept: "application/json",
         
-     'x-rapidapi-host': 'free-nba.p.rapidapi.com',
-    'x-rapidapi-key': '7fccaca72dmshf6b145ebf11dc24p1bd9fcjsnd28e1969585e'
+        'x-rapidapi-host': 'free-nba.p.rapidapi.com',
+        'x-rapidapi-key': '7fccaca72dmshf6b145ebf11dc24p1bd9fcjsnd28e1969585e'
       }
     };
     try {
-      const res = await axios.get('https://free-nba.p.rapidapi.com/teams', config);
-    //   this.cams = res.data.results;
-    this.teams = res.data.data;
-    console.log (res.data.data)
+      const res = await axios.get('https://free-nba.p.rapidapi.com/teams', config);   //send request
+
+      this.teams = res.data.data;   //fill teams array with response data
+
     } catch (err) {
-      console.log(err);
+      console.log(err);     //log error if request fails
     }
   },
 }
@@ -62,26 +80,36 @@ export default {
 
 .row {
     text-align: center;
-    
 }
 .col {
 text-align: left;
-background-color: #7c8daf;
 height: 3rem;
 }
 .headings {
-    background-color: #1a1970;
-    color: #F7E0D2;
     font-size: 1.5rem;
-    height: 5rem;
+    height: 3rem;
+    text-decoration: underline;
+    font-style:italic;
 }
 
 h1 {
     text-align: center;
-    padding-top: 2rem;
+    padding-top: 2.5rem;
     padding-bottom: .5rem;
-    
+    color: #1a1970; 
 }
+.changeColor:hover {
+  color: #ff00ff;
+  font-size: 3rem;
+  font-style: italic;
+  text-align: left;
+}
+.addBorder {
+  border: 2px solid #F7E0D2;
+  background-color: #7c8daf;
+
+}
+
 
 </style>
 

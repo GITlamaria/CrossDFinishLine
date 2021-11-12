@@ -16,9 +16,6 @@
           <nuxt-link class="nav-link" to="/teams">Teams</nuxt-link>
         </b-nav-item>
         <b-nav-item>
-          <nuxt-link class="nav-link" to="/createroute">Create Route</nuxt-link>
-        </b-nav-item>
-        <b-nav-item>
           <nuxt-link class="nav-link" to="/about">About</nuxt-link>
         </b-nav-item>
       </b-navbar-nav>
