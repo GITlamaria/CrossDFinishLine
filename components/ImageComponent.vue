@@ -15,9 +15,8 @@
 
 <script>
 
-//import border mixin
-// import ApplyBorder from './mixins/border'
 import ApplyBorder from '~/components/mixins/border'
+
 export default {
     
     //use the mixin in this component
