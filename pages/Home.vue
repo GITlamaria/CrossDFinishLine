@@ -133,8 +133,11 @@ export default {
       background-position: center;
 }
 .logos {
-  width: 40%;
+  width: 100%;
+  height: 100%;
   padding-right: 0!important;
+  object-fit: fill;
+  
 }
 
 .club-title {
