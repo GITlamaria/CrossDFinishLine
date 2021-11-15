@@ -1,5 +1,5 @@
 .clubs {
-  background-color: #91adc0;
+  background-color: #90aec0;
 }
 
 .home-main {
@@ -36,5 +36,22 @@
   background-color: white;
   margin-top: 2rem;
   color: #00008B;
+}
+
+footer {
+  background-color: #303030;
+  color: #ebdce1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 5rem;
+  margin-top: auto;
 }
 /*# sourceMappingURL=appStyle.css.map */

@@ -1,12 +1,13 @@
+
 .clubs {
-    background-color: #91adc0;
+    background-color: #90aec0;
   }
 
   .home-main {
       padding-top: 3rem;
       color: #f3e230;
   }
-
+  
   .solo, .friend, .smile {
     background-color: transparent!important;
   }
@@ -25,9 +26,22 @@
     border-top: 3px solid blue;
     margin-bottom: 2rem;
 }
-
 .race-card {
     background-color: white;
     margin-top: 2rem;
     color: #00008B;
 }
+
+footer {
+  background-color: #303030;
+  color: #ebdce1;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 5rem;
+  margin-top: auto;
+  
+  
+}
+

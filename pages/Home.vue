@@ -4,26 +4,16 @@
     <b-row>
       <b-col class="clubs" cols="3">
           <!-- Running Clubs - left pane -->
-
-     <b-row>
-       <b-col>
-        <b-button v-b-toggle.collapse class="clubs">PNW Running Clubs</b-button>
-       </b-col>
-     </b-row>
-        <b-col>
-          <b-collapse visible id="collapse">
-            <b-card class="clubs">
-                <!-- iterate through the clubs array to fill the collapsible menu -->
-                <p v-for="(club, key) in clubs" :key="club.id">
-                  <b-row>
-                    <b-col>
-                      <a :href="club.link">{{key}}</a>
-                    </b-col>
-                  </b-row>
-                </p>
-            </b-card>
-          </b-collapse>
-        </b-col>
+          <h5 class="club-title">PNW Running Clubs</h5>
+        <b-row v-for="club in clubs" :key="club.id">
+          <b-col cols="4">
+            <img class="logos" :src="club.src" :alt="club.name + 'logo'">
+          </b-col>
+          <b-col cols="8">
+            <a :href="club.link">{{club.clubName}}</a>
+          </b-col>
+          <hr>
+        </b-row>
       </b-col>
 
       <b-col cols="9" class="home-main">
@@ -75,63 +65,58 @@
 
 export default {
   
-
-  components: {
-    
+  props: {
+    name: String,
+    src: String,
+    href: String,
   },
   
   data() {
     return {
-     
+      /* main body images */
+      titleFriend: "Bond With a Friend",
+      altFriend: "2 people running",
+      imageFriend:  require('../assets/images/run-friend.jpeg'),
+  
+      titleSolo: "Let your mind wonder...",
+      altSolo: "1 person running",
+      imageSolo:  require('../assets/images/run-solo.jpg'),
 
-            titleFriend: "Bond With a Friend",
-            altFriend: "2 people running",
-            imageFriend:  require('../assets/images/run-friend.jpeg'),
-            // imageFriend:  ('../assets/images/run-friend.jpeg'),
-            
-        
-            titleSolo: "Let your mind wonder...",
-            altSolo: "1 person running",
-            imageSolo:  require('../assets/images/run-solo.jpg'),
-      
-            titleSmile: "What a Feeling...",
-            altSmile: "happy kid running",
-            imageSmile:  require('../assets/images/run-smile.jpeg'),
+      titleSmile: "What a Feeling...",
+      altSmile: "happy kid running",
+      imageSmile:  require('../assets/images/run-smile.jpeg'),
                 
             
-      /* clubs object */
-      clubs: {
-        
-        'Club Northwest': {id: 1, 
-            link: "https://www.clubnorthwest.org/",
-            image: [
-            require('@/assets/images/Club+Northwest+logo_transparent.png'), 
-            ]},
-
-        'Running in the USA': {id: 2,  
-            link: "https://www.runningintheusa.com/club/list/wa",
-            image: [
-            require('@/assets/images/run-usa.gif'), 
-            ]},
-
-        'Seattle Running Club': {id: 2,    
-            link: "https://seattlerunningclub.org",
-            image: [
-            require('@/assets/images/seattle-running.png'), 
-            ]},
-
-        'Cascade Run Club Seattle': {id: 2,   
-            link: "https://cascaderunclub.com/locations/cascade-run-club-seattle",
-            image: [
-            require('@/assets/images/run-cascade.png'), 
-            ]},
-
-        'Sonic Boom Running Club': {id: 2,     
-            link: "https://sonicboomrunningclub.com/",
-            image: [
-            require('@/assets/images/sonic-boom.jpg'), 
-            ]},
+      /* clubs array */
+      clubs: [
+        {
+          clubName: "Club Northwest",
+          link: "https://www.clubnorthwest.org/",
+          src: require('@/assets/images/Club+Northwest+logo_transparent.png')
         },
+        {
+          clubName: "Running in the USA",
+          link: "https://www.runningintheusa.com/club/list/wa",
+          src: require('@/assets/images/run-usa.gif')
+          
+        },
+        {
+          clubName: "Seattle Running Club",
+          link: "https://seattlerunningclub.org",
+          src: require('@/assets/images/seattle-running.png')
+        },
+        {
+          clubName: "Cascade Run Club Seattle",
+          link: "https://cascaderunclub.com/locations/cascade-run-club-seattle",
+          src: require('@/assets/images/run-cascade.png')
+        },
+        {
+          clubName: "Sonic Boom Running Club",
+          link: "https://sonicboomrunningclub.com/",
+          src: require('@/assets/images/sonic-boom.jpg')
+        },
+        
+      ],
 
         showAlert: true
     }
@@ -146,6 +131,26 @@ export default {
       background-image: url('../assets/images/main-content.jpeg'); 
       background-size: cover;
       background-position: center;
+}
+.logos {
+  width: 40%;
+  padding-right: 0!important;
+}
+
+.club-title {
+  color: #1a1970;
+}
+hr {
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    }
+h5 {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  border-bottom: 1px solid #f3e230;
+}
+img {
+  float: right;
 }
 </style> 
 

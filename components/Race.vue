@@ -1,4 +1,5 @@
 <template>
+<!-- Race component -->
     <div class="e-runners"> 
         
         <b-card class="race-card" 

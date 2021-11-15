@@ -22,23 +22,23 @@
     </b-navbar>
 
     <!--nuxt-link /-->     <!-- this is where the components will render when the links are triggered -->
-    
-    <!-- <footer-slot> 
-    </footer-slot> -->
-    <nuxt />
+     <nuxt />
+  <FooterSlot>
+  </FooterSlot>
+   
   </div>
 </template>
 
 <script>
 import HeaderSlot from '~/components/HeaderSlot.vue'
-// import FooterSlot from '~/pages/FooterSlot.vue'
+import FooterSlot from '../components/FooterSlot.vue'
 
 
 export default {
   name: 'App',
   components: {
     HeaderSlot,
-    // FooterSlot,
+    FooterSlot,
     
   }
 }

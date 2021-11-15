@@ -1,17 +1,13 @@
 <template>
-    <div>
+    <div class="page-footer">
         <footer class="footer">
-            <div class="container">
-                <h2>...working on footer...</h2>
+            <div>
+                © 2021 Copyright: CrossDFinishLine.com
             </div>
         </footer>
         <slot />
     </div>
 </template>
 
-
-<style scoped>
-    h2 {
-        text-align: center;
-    }
-</style>
+<!-- link to global stylesheet -->
+<style src="@/assets/styles/appStyle.css" />

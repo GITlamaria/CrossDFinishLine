@@ -1,4 +1,5 @@
 <template>
+
     <div class="about-page">
         <div class="title">
             <hr>
@@ -35,4 +36,7 @@
         margin-bottom: 2rem;
         background-color: #808080;
     }
+.about-page {
+    min-height: 100vh;      /* to force footer to bottom of page */
+}
 </style>
