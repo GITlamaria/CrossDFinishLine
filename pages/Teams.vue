@@ -48,8 +48,18 @@ export default {
         this.bordered=!this.bordered;
       }
     },
-     
-    
+      head() {
+          return {
+            title: "Teams - Crossing the Finish Line!",
+            meta: [
+              {
+                hid: "description",
+                name: "description",
+                content: "Page contains details about basketball teams."
+              }
+            ]
+          }
+        },
     async created() {
     const config = {
  

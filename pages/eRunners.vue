@@ -130,9 +130,21 @@ export default {
                   
               }
         ],
-        
       }
     },
+
+    head() {
+      return {
+        title: "Elite Runners - Crosssing the Finish Line!",
+        meta: [
+          {
+            hid: "description",
+            name: "description",
+            content: "Athletes who hold the world record for running a 5K, 10K, 1/2 marathon, full marathon"
+          }
+        ]
+      }
+    }
   }
 
 </script>

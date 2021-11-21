@@ -70,6 +70,18 @@ export default {
     src: String,
     href: String,
   },
+   head() {
+          return {
+            title: "Home - Crossing the Finish Line!",
+            meta: [
+              {
+                hid: "description",
+                name: "description",
+                content: "This page contains links to running clubs as well as images of people who enjoy running.  Why run?  healthy, fit"
+              }
+            ]
+          }
+        },
   
   data() {
     return {
@@ -117,8 +129,6 @@ export default {
         },
         
       ],
-
-        showAlert: true
     }
   }
 }

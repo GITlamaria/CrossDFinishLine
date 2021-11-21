@@ -3,7 +3,7 @@
     <div class="about-page">
         <div class="title">
             <hr>
-            <h2>Welcome to my web site</h2>
+            <h2>Welcome to my website</h2>
             <h6>Established:  2021</h6>
 
         </div>
@@ -22,6 +22,24 @@
 
     </div>
 </template>
+<script>
+
+export default {
+   head() {
+          return {
+            title: "About - Crossing the Finish Line!",
+            meta: [
+              {
+                hid: "description",
+                name: "description",
+                content: "This is a website about running."
+              }
+            ]
+          }
+        }
+}
+</script>
+
 
 <style scoped>
     .title {
